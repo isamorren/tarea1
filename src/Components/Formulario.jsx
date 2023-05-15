@@ -1,7 +1,7 @@
 import "./Formulario.css"
 import { useState } from "react"
 
-export function Formulario() {
+export function Formulario({setUser}) {
     const [nombre, setNombre] = useState("")
     const [contraseña, setContraseña] = useState("")
     const[error, setError] = useState(false)
@@ -16,7 +16,9 @@ export function Formulario() {
         }
 
         setError{false}
-        
+
+        setUser([nombre])
+
     }
 
     return (
