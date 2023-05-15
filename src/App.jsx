@@ -9,8 +9,12 @@ function App() {
 
   return (
       <div className="App">
-        <Formulario setUser={setUser} />
-        <Home/>
+        {
+          !user.length > 0
+          ? <Formulario setUser={setUser} />
+          : <Home user={user} setUser={setUser} />
+        }
+
       </div>
   )
 }
