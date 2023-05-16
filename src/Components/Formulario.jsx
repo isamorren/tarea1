@@ -1,22 +1,20 @@
 import "./Formulario.css"
 import { useState } from "react"
 
-export function Formulario({setUser}) {
+export function Formulario({ setUser }) {
     const [nombre, setNombre] = useState("")
     const [contraseña, setContraseña] = useState("")
-    const[error, setError] = useState(false)
+    const [error, setError] = useState(false)
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if(nombre == "" || contraseña == "") {
+        if (nombre === "" || contraseña === "") {
             setError(true)
             return
         }
-
-        setError{false}
-
+        setError(false)
         setUser([nombre])
 
     }
